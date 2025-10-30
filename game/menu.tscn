@@ -1,0 +1,275 @@
+[gd_scene load_steps=26 format=3 uid="uid://ddilibrcakg0t"]
+
+[ext_resource type="Script" uid="uid://cgmydw8x2v1ir" path="res://main.gd" id="1_gd0jp"]
+[ext_resource type="FontFile" uid="uid://fumxavpbckqq" path="res://fonts/Creepster/Creepster-Regular.ttf" id="1_oxnod"]
+[ext_resource type="FontFile" uid="uid://baxxvvibnvqhe" path="res://fonts/Jolly_Lodger/JollyLodger-Regular.ttf" id="2_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://c0mqfs4vxx4fp" path="res://assets/door/Door1.png" id="3_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://ckksvtviynsql" path="res://assets/door/Door2.png" id="4_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://dg1sguix1nd04" path="res://assets/door/Door3.png" id="5_5h80m"]
+[ext_resource type="Texture2D" uid="uid://orc1iu0bg8wj" path="res://assets/door/Door4.png" id="6_w25hu"]
+[ext_resource type="Texture2D" uid="uid://5wch1qqgm8uh" path="res://assets/door/Door5.png" id="7_td6mg"]
+[ext_resource type="Texture2D" uid="uid://bp28x6tcgmw43" path="res://assets/door/Door6.png" id="8_guify"]
+[ext_resource type="Texture2D" uid="uid://shg3x5uy7pec" path="res://assets/door/Door7.png" id="9_oil5j"]
+[ext_resource type="Texture2D" uid="uid://c82yceta6hunb" path="res://assets/door/Door8.png" id="10_8uog0"]
+[ext_resource type="Texture2D" uid="uid://cfo1tk7ykima3" path="res://assets/door/Door9.png" id="11_k5x1w"]
+[ext_resource type="Texture2D" uid="uid://cdfhtjiopo1tp" path="res://assets/door/Door10.png" id="12_rkpqm"]
+[ext_resource type="Texture2D" uid="uid://cjhug4cme8trh" path="res://assets/door/Door11.png" id="13_7wriu"]
+[ext_resource type="Texture2D" uid="uid://bt6syami12f3x" path="res://assets/door/Door12.png" id="14_xhgcl"]
+[ext_resource type="Texture2D" uid="uid://dqb46dho7ykqt" path="res://assets/door/Door13.png" id="15_8tnp7"]
+[ext_resource type="Texture2D" uid="uid://2aa64vn2t30x" path="res://assets/key/KeyFly1.png" id="15_guify"]
+[ext_resource type="Texture2D" uid="uid://cr3g1jbt2dxo5" path="res://assets/key/KeyFly2.png" id="16_oil5j"]
+[ext_resource type="AudioStream" uid="uid://clulpohclyv12" path="res://audio/closing-door.ogg" id="17_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://b0x8cxnp1y5ol" path="res://assets/key/KeyFly3.png" id="17_8uog0"]
+[ext_resource type="AudioStream" uid="uid://bbag3vagk4eb1" path="res://audio/opening-door.wav" id="18_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://ckqrjupbkr6ss" path="res://assets/key/KeyFly4.png" id="18_k5x1w"]
+[ext_resource type="AudioStream" uid="uid://xjd7nfnjnulq" path="res://audio/inhale.wav" id="23_oil5j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlonj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ndjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ls4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5h80m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w25hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_td6mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_guify")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oil5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8uog0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k5x1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rkpqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7wriu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xhgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8tnp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_td6mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_guify")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oil5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8uog0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k5x1w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_rkpqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7wriu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xhgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8tnp7")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ndjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ls4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5h80m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w25hu")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkpqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_guify")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_oil5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8uog0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k5x1w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_guify")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_oil5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8uog0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k5x1w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_gd0jp")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Door" type="AnimatedSprite2D" parent="Node2D"]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_rlonj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.025557877
+
+[node name="Key" type="AnimatedSprite2D" parent="Node2D"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rkpqm")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.271825
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="CenterContainer" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="Title" type="Label" parent="HUD/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oxnod")
+theme_override_font_sizes/font_size = 128
+text = "Lullaby of the Unseen"
+horizontal_alignment = 1
+
+[node name="Instruction" type="Label" parent="HUD/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gd0jp")
+theme_override_font_sizes/font_size = 64
+text = "Some places are best left undisturbed. Especially tonight."
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="HUD/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oxnod")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Game" type="CenterContainer" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Game"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Instruction1" type="Label" parent="HUD/Game/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gd0jp")
+theme_override_font_sizes/font_size = 64
+text = "The attic is long. You will need the key to leave."
+horizontal_alignment = 1
+
+[node name="Instruction2" type="Label" parent="HUD/Game/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gd0jp")
+theme_override_font_sizes/font_size = 64
+text = "The floorboards creak. Match your steps. Good luck."
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayers" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="ClosingDoor" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
+stream = ExtResource("17_4ndjb")
+
+[node name="OpeningDoor" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
+stream = ExtResource("18_3ls4m")
+
+[node name="Inhale" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
+stream = ExtResource("23_oil5j")
+
+[node name="Impact" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
+stream = ExtResource("23_oil5j")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="HUD/Menu/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
