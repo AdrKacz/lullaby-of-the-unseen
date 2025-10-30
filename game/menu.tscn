@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ddilibrcakg0t"]
+[gd_scene load_steps=35 format=3 uid="uid://ddilibrcakg0t"]
 
 [ext_resource type="Script" uid="uid://cgmydw8x2v1ir" path="res://main.gd" id="1_gd0jp"]
 [ext_resource type="FontFile" uid="uid://fumxavpbckqq" path="res://fonts/Creepster/Creepster-Regular.ttf" id="1_oxnod"]
@@ -15,13 +15,21 @@
 [ext_resource type="Texture2D" uid="uid://cdfhtjiopo1tp" path="res://assets/door/Door10.png" id="12_rkpqm"]
 [ext_resource type="Texture2D" uid="uid://cjhug4cme8trh" path="res://assets/door/Door11.png" id="13_7wriu"]
 [ext_resource type="Texture2D" uid="uid://bt6syami12f3x" path="res://assets/door/Door12.png" id="14_xhgcl"]
+[ext_resource type="Texture2D" uid="uid://c1ka5alrsgbnu" path="res://assets/door_frame/frame_0.png" id="15_7wriu"]
 [ext_resource type="Texture2D" uid="uid://dqb46dho7ykqt" path="res://assets/door/Door13.png" id="15_8tnp7"]
 [ext_resource type="Texture2D" uid="uid://2aa64vn2t30x" path="res://assets/key/KeyFly1.png" id="15_guify"]
 [ext_resource type="Texture2D" uid="uid://cr3g1jbt2dxo5" path="res://assets/key/KeyFly2.png" id="16_oil5j"]
+[ext_resource type="Texture2D" uid="uid://cu8h28g1s4xyu" path="res://assets/door_frame/frame_1.png" id="16_xhgcl"]
 [ext_resource type="AudioStream" uid="uid://clulpohclyv12" path="res://audio/closing-door.ogg" id="17_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://dtwcqq0pffv6v" path="res://assets/door_frame/frame_2.png" id="17_8tnp7"]
 [ext_resource type="Texture2D" uid="uid://b0x8cxnp1y5ol" path="res://assets/key/KeyFly3.png" id="17_8uog0"]
 [ext_resource type="AudioStream" uid="uid://bbag3vagk4eb1" path="res://audio/opening-door.wav" id="18_3ls4m"]
 [ext_resource type="Texture2D" uid="uid://ckqrjupbkr6ss" path="res://assets/key/KeyFly4.png" id="18_k5x1w"]
+[ext_resource type="Texture2D" uid="uid://cyc88tch0ouyo" path="res://assets/door_frame/frame_3.png" id="18_rlonj"]
+[ext_resource type="Texture2D" uid="uid://b71al5olrrr6d" path="res://assets/door_frame/opening_frame0.png" id="19_t5jqm"]
+[ext_resource type="Texture2D" uid="uid://bl0rfba8xon8o" path="res://assets/door_frame/opening_frame1.png" id="20_8lmdq"]
+[ext_resource type="Texture2D" uid="uid://c4qy7x488p2sx" path="res://assets/door_frame/opening_frame2.png" id="21_m2id3"]
+[ext_resource type="Texture2D" uid="uid://bi31ci4injb7r" path="res://assets/door_frame/opening_frame3.png" id="22_k1fdc"]
 [ext_resource type="AudioStream" uid="uid://xjd7nfnjnulq" path="res://audio/inhale.wav" id="23_oil5j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rlonj"]
@@ -125,6 +133,72 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5jqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_7wriu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xhgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8tnp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rlonj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_t5jqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8lmdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m2id3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_k1fdc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_7wriu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xhgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8tnp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rlonj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_t5jqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8lmdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m2id3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_k1fdc")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkpqm"]
 animations = [{
 "frames": [{
@@ -176,6 +250,14 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.025557877
 
+[node name="DoorFrame" type="AnimatedSprite2D" parent="Node2D"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-1000, 0)
+sprite_frames = SubResource("SpriteFrames_t5jqm")
+animation = &"open"
+autoplay = "idle"
+
 [node name="Key" type="AnimatedSprite2D" parent="Node2D"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
@@ -216,12 +298,6 @@ theme_override_font_sizes/font_size = 64
 text = "Some places are best left undisturbed. Especially tonight."
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="HUD/Menu/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_oxnod")
-theme_override_font_sizes/font_size = 64
-text = "Start"
-
 [node name="Game" type="CenterContainer" parent="HUD"]
 unique_name_in_owner = true
 visible = false
@@ -253,6 +329,95 @@ theme_override_font_sizes/font_size = 64
 text = "The floorboards creak. Match your steps. Good luck."
 horizontal_alignment = 1
 
+[node name="GameOver" type="CenterContainer" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/GameOver"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oxnod")
+theme_override_font_sizes/font_size = 128
+text = "It killed you ..."
+
+[node name="Win" type="CenterContainer" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -456.0
+offset_top = -116.5
+offset_right = 456.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Win"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/Win/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oxnod")
+theme_override_font_sizes/font_size = 128
+text = "You escaped the dark."
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="HUD/Win/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gd0jp")
+theme_override_font_sizes/font_size = 64
+text = "The Sleeper's count: 12 steps"
+horizontal_alignment = 1
+
+[node name="Reflection" type="Label" parent="HUD/Win/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gd0jp")
+theme_override_font_sizes/font_size = 64
+text = "The silence will resume soon."
+horizontal_alignment = 1
+
+[node name="Instruction" type="CenterContainer" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Instruction"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Instruction/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Space" type="Label" parent="HUD/Instruction/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_oxnod")
+theme_override_font_sizes/font_size = 32
+text = "SPACE"
+
+[node name="InstructionText" type="Label" parent="HUD/Instruction/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gd0jp")
+theme_override_font_sizes/font_size = 32
+text = "Enter the silence"
+
 [node name="AudioStreamPlayers" type="Node" parent="."]
 unique_name_in_owner = true
 
@@ -265,11 +430,15 @@ stream = ExtResource("18_3ls4m")
 [node name="Inhale" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource("23_oil5j")
 
+[node name="Roar" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
+
+[node name="Step" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
+
 [node name="Impact" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource("23_oil5j")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
+one_shot = true
 
-[connection signal="pressed" from="HUD/Menu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
